@@ -2,7 +2,7 @@
 
 ## Included code
 
-`utils/system_utils.py` is copied unchanged from the existing E-3DGS-based project. Its header identifies Copyright (C) 2023, Inria, GRAPHDECO research group. The original header and complete Gaussian Splatting license are retained in this distribution (`LICENSE.md`). This file contains filesystem helpers only and does not implement this manuscript's research contributions.
+Baseline files under `scene/`, `gaussian_renderer/`, `utils/`, and `arguments/__init__.py` are exported with whitespace normalization only from baseline revision `00d49f350c98e6f16b62862c0651ff34bdcbe705` of the existing E-3DGS-based project. Their original copyright headers and the complete Gaussian Splatting license (`LICENSE.md`) are retained. New names-only argument previews, entry-point placeholders, and release-boundary tests are distributed under the same license. These files do not implement this manuscript's research contributions. See `PUBLIC_CONTENTS.md` for the exact boundary.
 
 ## Research foundations and external dependencies
 

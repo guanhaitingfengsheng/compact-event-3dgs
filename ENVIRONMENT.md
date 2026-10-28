@@ -14,3 +14,7 @@ conda activate compact-event-preview
 This environment file has not been installed or validated on a fresh Linux/CUDA system for this pre-release. Installing it alone does not enable training. A compatible NVIDIA driver, CUDA compiler/toolkit, C++ build toolchain, and the upstream `diff-gaussian-rasterization` and `simple-knn` extensions are required by the eventual full training release. CUDA runtime packages alone do not provide every extension build requirement. Exact build and reproduction instructions will accompany the full release.
 
 The public `utils/system_utils.py` helper can be used with Python alone. `mkdir_p(path)` creates a directory idempotently. `searchForMaxIteration(path)` expects a nonempty directory containing only entries whose final underscore-separated component is an integer, such as `iteration_100`; it returns the largest integer. The unchanged upstream helper does not filter unrelated filenames.
+
+## Expanded public preview
+
+Baseline Python infrastructure is included, but the research `train.py` and `render.py` implementations are withheld and replaced by explicit interface placeholders. The names-only preview and its tests need no GPU dependencies. Source inspection of baseline GPU modules is supported; training and rendering are not enabled by this partial release.

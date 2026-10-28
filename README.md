@@ -6,15 +6,18 @@ Public pre-release materials for **Compact event-based 3D Gaussian reconstructio
 
 **The complete source code will be made publicly available in this repository upon acceptance of the associated manuscript.**
 
-The current pre-release contains only a non-core filesystem utility, a reference environment configuration, citation information, and third-party notices. The core reconstruction methods, training and rendering pipelines, checkpoints, and experimental outputs are not included. This snapshot is not sufficient to reproduce the manuscript results.
+The current pre-release contains baseline infrastructure, reserved parameter names, a reference environment configuration, citation information, and third-party notices. The core reconstruction methods, training and rendering pipelines, checkpoints, and experimental outputs are not included. This snapshot is not sufficient to reproduce the manuscript results.
 
-中文：本仓库目前仅公开非核心辅助代码、参考环境和引用信息。论文录用后，将在本仓库公开完整源代码。当前版本不包含核心算法，不能用于复现论文结果。
+中文：本仓库目前公开通用基线代码、核心模块的参数名称、参考环境和引用信息。论文录用后，将在本仓库公开完整源代码。当前版本不包含核心算法，不能用于复现论文结果。
 
 ## Current contents
 
 | File | Purpose |
 | --- | --- |
-| `utils/system_utils.py` | Upstream directory creation and iteration-directory lookup helpers |
+| `scene/`, `gaussian_renderer/`, `utils/` | Existing baseline infrastructure, without manuscript-specific modules |
+| `arguments/` | Baseline arguments and names-only reserved research options |
+| `train.py`, `render.py` | Explicit placeholders; `--help` only, execution disabled |
+| `tests/`, `PUBLIC_CONTENTS.md` | Interface boundary tests and precise release scope |
 | `environment.yml` | Reference Python/PyTorch environment, excluding unpublished code and CUDA extensions |
 | `ENVIRONMENT.md` | Environment scope and verification limits |
 | `CITATION.bib` | Provisional manuscript citation and upstream references |
@@ -23,7 +26,7 @@ The current pre-release contains only a non-core filesystem utility, a reference
 
 ## Environment
 
-The research code targets Linux, Python 3.7.13, PyTorch 1.12.1, and CUDA toolkit 11.6. See [ENVIRONMENT.md](ENVIRONMENT.md) for details. The included filesystem utility uses only the Python standard library and does not require a GPU.
+The research code targets Linux, Python 3.7.13, PyTorch 1.12.1, and CUDA toolkit 11.6. See [ENVIRONMENT.md](ENVIRONMENT.md) for details. The interface preview (`python train.py --help`) uses only the standard library. Baseline GPU components require their original dependencies. See [PUBLIC_CONTENTS.md](PUBLIC_CONTENTS.md) for the release boundary.
 
 ## Citation
 
@@ -37,4 +40,4 @@ No datasets or model weights are distributed in this pre-release. E-3DGS dataset
 
 ## License and acknowledgments
 
-The included `utils/system_utils.py` is an unchanged upstream utility with its original copyright header. Its use is governed by [LICENSE.md](LICENSE.md). See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Public visibility does not replace the applicable license terms. The license and component notices for the complete release will be provided with that release.
+The included baseline source files retain their original copyright headers. New preview wrappers expose names only and contain no research implementation. Its use is governed by [LICENSE.md](LICENSE.md). See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Public visibility does not replace the applicable license terms. The license and component notices for the complete release will be provided with that release.
